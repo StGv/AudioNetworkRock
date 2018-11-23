@@ -85,12 +85,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebConfigLoader.cs" />
+    <Compile Include="Controllers\TracksController.cs" />
+    <Compile Include="ExternalAPI\AsyncDataFetcher.cs" />
+    <Compile Include="ExternalAPI\HttpClientSingleton.cs" />
+    <Compile Include="Models\Composer.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="dto\Track.cs" />
+    <Compile Include="Models\Track.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ComposersRepo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\TracksRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -101,10 +109,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
