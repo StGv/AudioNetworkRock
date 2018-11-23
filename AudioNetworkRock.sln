@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioNetworkRock", "AudioNetworkRock\AudioNetworkRock.csproj", "{EFB35FF7-6124-4EE5-BB48-3734EA5FFC45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioNetworkRock.Tests", "AudioNetworkRock.Tests\AudioNetworkRock.Tests.csproj", "{68AD1758-3E96-4EF4-A844-C8B3099DC626}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFB35FF7-6124-4EE5-BB48-3734EA5FFC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB35FF7-6124-4EE5-BB48-3734EA5FFC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB35FF7-6124-4EE5-BB48-3734EA5FFC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB35FF7-6124-4EE5-BB48-3734EA5FFC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68AD1758-3E96-4EF4-A844-C8B3099DC626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68AD1758-3E96-4EF4-A844-C8B3099DC626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68AD1758-3E96-4EF4-A844-C8B3099DC626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68AD1758-3E96-4EF4-A844-C8B3099DC626}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0947FFFB-5C3F-448A-8BCC-0027BE64BDB7}
+	EndGlobalSection
+EndGlobal
