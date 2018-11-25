@@ -6,6 +6,6 @@ namespace AudioNetworkRock.Models
         public int ID;
         public string Title;
         public int ComoiserId;
-        public string genre;
+        public string Genre;
     }
 }

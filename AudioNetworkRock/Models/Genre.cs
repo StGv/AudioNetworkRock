@@ -6,7 +6,11 @@ namespace AudioNetworkRock.Models
     public enum Genre
     {
         [StringValue("rock")]
-        Rock  = 1
+        Rock,
+        [StringValue("electronic")]
+        Electronic,
+        [StringValue("classical")]
+        Classical
     }
 
     internal class StringValueAttribute : Attribute
