@@ -12,13 +12,13 @@ namespace AudioNetworkRock.Controllers
     [RoutePrefix("api/tracks")]
     public class TracksController : ApiController
     {
-        TracksRepo _tracks;
-        ComposersRepo _composers;
+        IRepository<Track> _tracks;
+        IRepository<Composer> _composers;
 
-        public TracksController()
+        public TracksController(IRepository<Track> tracks, IRepository<Composer> composers)
         {
-            _tracks = new TracksRepo();
-            _composers = new ComposersRepo();
+            _tracks = tracks;
+            _composers = composers;
         }
 
         [Route("genre/{genre}")]
@@ -26,13 +26,19 @@ namespace AudioNetworkRock.Controllers
         public IHttpActionResult Get([FromUri]string genre)
         {
             var joinTracksAndComposers = 
-                from track in _tracks.Tracks
-                join composer in _composers.Composers on track.ComoiserId equals composer.ID
-                where track.genre.Equals(Genre.Rock.toString())
+                from track in _tracks.GetAll()
+                join composer in _composers.GetAll() on track.ComoiserId equals composer.ID
+                //where track.Genre.Equals(Genre.Rock.toString())
                 orderby track.Title 
-                select new { Id = track.ID, track.Title, genre = track.genre, Composer = string.Join(" ", composer.FirstName, composer.LastName)};
+                select new {
+                    Id = track.ID,
+                    track.Title,
+                    genre = track.Genre,
+                    Composer = string.Join(" ", composer.FirstName, composer.LastName)
+                };
 
-            return Ok (joinTracksAndComposers);
+            return Ok (new { Test = true, test2=2, test3="something"});
         }
+
     }
 }
