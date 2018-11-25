@@ -1,9 +1,7 @@
-﻿using AudioNetworkRock.Models;
+﻿using AudioNetworkRock.ExternalAPI;
+using AudioNetworkRock.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AudioNetworkRock.ExternalAPI;
 using System.Configuration;
 
 namespace AudioNetworkRock.Repository
@@ -13,7 +11,7 @@ namespace AudioNetworkRock.Repository
         public ComposersRepo()
         {
             var path = ConfigurationManager.AppSettings["ComposersWebAPI"];
-            Composers = AsyncDataFetcher<List<Composer>>.GetProductAsync(path).Result;
+            Composers = DataFetcher<List<Composer>>.Get(new Uri(path));
         }
         public List<Composer> Composers { get; private set; }
 

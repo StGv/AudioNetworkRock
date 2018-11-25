@@ -3,8 +3,6 @@ using AudioNetworkRock.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Web;
 
 namespace AudioNetworkRock.Repository
 {
@@ -13,7 +11,7 @@ namespace AudioNetworkRock.Repository
         public TracksRepo()
         {
             var path = ConfigurationManager.AppSettings["TracksWebAPI"];
-            Tracks = AsyncDataFetcher<List<Track>>.GetProductAsync(path).Result;
+            Tracks = DataFetcher<List<Track>>.Get(new Uri(path));
         }
 
         public List<Track> Tracks { get; private set; }
