@@ -5,7 +5,7 @@ namespace AudioNetworkRock.Models
     {
         public int ID;
         public string Title;
-        public int ComoiserId;
+        public int ComposerId;
         public string Genre;
     }
 }
