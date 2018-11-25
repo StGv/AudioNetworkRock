@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Linq;
 
 namespace AudioNetworkRock.Models
 {
@@ -35,6 +36,23 @@ namespace AudioNetworkRock.Models
             return attribs.Length > 0 
                 ? attribs[0].StringValue 
                 : string.Empty;
+        }
+    }
+
+    public static class GenreConverter
+    {
+        public static Genre ConvertFrom(string genre)
+        {
+            if (Genre.Rock.toString().Equals(genre, StringComparison.CurrentCultureIgnoreCase))
+                return Genre.Rock;
+
+            if (Genre.Classical.toString().Equals(genre, StringComparison.CurrentCultureIgnoreCase))
+                return Genre.Classical;
+
+            if (Genre.Electronic.toString().Equals(genre, StringComparison.CurrentCultureIgnoreCase))
+                return Genre.Electronic;
+
+            return default(Genre);
         }
     }
 }

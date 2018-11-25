@@ -129,7 +129,9 @@
     <Compile Include="Repository\ComposersRepo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\TracksRepo.cs" />
+    <Compile Include="Services\IRockService.cs" />
     <Compile Include="Services\RockService.cs" />
+    <Compile Include="Services\TrackWithComposerName.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
