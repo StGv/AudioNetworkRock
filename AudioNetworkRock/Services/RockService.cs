@@ -20,10 +20,10 @@ namespace AudioNetworkRock.Services
         {
             var joinTracksAndComposers =
                 from track in _tracks.GetAll()
-                where track.Genre.Equals(genre.toString())
-                orderby track.Title ascending
                 join composer in _composers.GetAll() on track.ComposerId equals composer.ID into composerGroup
                 from c in composerGroup.DefaultIfEmpty()
+                where track.Genre.Equals(genre.toString())
+                orderby track.Title ascending
                 select new TrackWithComposerName
                 {
                     Id = track.ID,

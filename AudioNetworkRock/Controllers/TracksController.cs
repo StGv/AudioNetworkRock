@@ -29,7 +29,7 @@ namespace AudioNetworkRock.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                System.Diagnostics.Debug.WriteLine(e.Message);
                 return InternalServerError();
             }
 
