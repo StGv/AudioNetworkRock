@@ -1,3 +1,4 @@
+using AudioNetworkRock.MemoryCache;
 using AudioNetworkRock.Models;
 using AudioNetworkRock.Repository;
 using AudioNetworkRock.Services;
@@ -16,6 +17,8 @@ namespace AudioNetworkRock
             container.RegisterType<IRepository<Track>, TracksRepo>();
             container.RegisterType<IRepository<Composer>, ComposersRepo>();
             container.RegisterType<IRockService, RockService>();
+
+            container.RegisterInstance<IMemoryCache>(new MemCacheWrapper(System.Runtime.Caching.MemoryCache.Default));
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

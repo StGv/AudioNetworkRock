@@ -1,4 +1,5 @@
 ﻿using AudioNetworkRock.ExternalAPI;
+using AudioNetworkRock.MemoryCache;
 using AudioNetworkRock.Models;
 using System;
 using System.Collections.Generic;
@@ -8,16 +9,34 @@ namespace AudioNetworkRock.Repository
 {
     public class ComposersRepo : IRepository<Composer>
     {
-        public ComposersRepo()
+        const string CACHE_KEY = "composers";
+        const string WEB_URI_CONFIG_KEY = "ComposersWebAPI";
+
+        IMemoryCache _cache;
+
+        public ComposersRepo(IMemoryCache cache)
         {
-            var path = ConfigurationManager.AppSettings["ComposersWebAPI"];
-            Composers = DataFetcher<List<Composer>>.Get(new Uri(path));
+            _cache = cache;
         }
-        public List<Composer> Composers { get; private set; }
 
         public IEnumerable<Composer> GetAll()
         {
-            return Composers;
+            if (_cache.Contains(CACHE_KEY))
+            {
+                return _cache.Get(CACHE_KEY) as List<Composer>;
+            }
+
+            var composers = GetDataFromWeb();
+            _cache.Add(CACHE_KEY, composers);
+
+            return composers;
         }
+
+        private static List<Composer> GetDataFromWeb()
+        {
+            var path = ConfigurationManager.AppSettings[WEB_URI_CONFIG_KEY];
+            return DataFetcher<List<Composer>>.Get(new Uri(path));
+        }
+
     }
 }
