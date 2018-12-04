@@ -5,6 +5,6 @@ namespace AudioNetworkRock.Services
 {
     public interface IRockService
     {
-        IEnumerable<TrackWithComposerName> GetTracksWithComposernames(Genre genre);
+        IEnumerable<TrackWithComposerName> GetTracksWithComposerNames(Genre genre);
     }
 }

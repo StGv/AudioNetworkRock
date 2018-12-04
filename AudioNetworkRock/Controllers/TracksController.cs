@@ -22,7 +22,7 @@ namespace AudioNetworkRock.Controllers
             try
             {
                 var joinTracksAndComposers = _rockService
-                    .GetTracksWithComposernames(GenreConverter.ConvertFrom(genre));
+                    .GetTracksWithComposerNames(GenreConverter.ConvertFrom(genre));
 
                 if (joinTracksAndComposers.Count() > 0)
                     return Ok(joinTracksAndComposers);

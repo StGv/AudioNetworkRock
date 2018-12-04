@@ -16,7 +16,7 @@ namespace AudioNetworkRock.Services
             _composers = composers;
         }
 
-        public IEnumerable<TrackWithComposerName> GetTracksWithComposernames(Genre genre)
+        public IEnumerable<TrackWithComposerName> GetTracksWithComposerNames(Genre genre)
         {
             var joinTracksAndComposers =
                 from track in _tracks.GetAll()

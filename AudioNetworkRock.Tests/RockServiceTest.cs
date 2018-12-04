@@ -39,7 +39,7 @@ namespace AudioNetworkRock.Tests
             _composers.Setup(x => x.GetAll()).Returns(mockComposers);
 
             //// Act
-            var actual = _target.GetTracksWithComposernames(Genre.Rock);
+            var actual = _target.GetTracksWithComposerNames(Genre.Rock);
 
             // Assert
             Assert.IsNotNull(actual);
@@ -64,7 +64,7 @@ namespace AudioNetworkRock.Tests
             _composers.Setup(x => x.GetAll()).Returns(mockComposers);
 
             //// Act
-            var actual = _target.GetTracksWithComposernames(Genre.Rock);
+            var actual = _target.GetTracksWithComposerNames(Genre.Rock);
 
             // Assert
             Assert.IsNotNull(actual);
@@ -94,7 +94,7 @@ namespace AudioNetworkRock.Tests
             _composers.Setup(x => x.GetAll()).Returns(mockComposers);
 
             //// Act
-            var actual = _target.GetTracksWithComposernames(Genre.Rock);
+            var actual = _target.GetTracksWithComposerNames(Genre.Rock);
 
             // Assert
             Assert.IsNotNull(actual);
@@ -124,7 +124,7 @@ namespace AudioNetworkRock.Tests
             _composers.Setup(x => x.GetAll()).Returns(mockComposers);
 
             //// Act
-            var actual = _target.GetTracksWithComposernames(Genre.Rock);
+            var actual = _target.GetTracksWithComposerNames(Genre.Rock);
 
             // Assert
             Assert.IsNotNull(actual);
